@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <CoinDir>C:\Personal\Binary\bonmin\</CoinDir>
+    <IpoptLib>ipopt.dll.lib</IpoptLib>
+    <CoinDebugEnvironment>PATH=$(CoinDir)bin;$(VCRedistPaths)%PATH%</CoinDebugEnvironment>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(CoinDir)include\coin-or;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(CoinDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="CoinDir">
+      <Value>$(CoinDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="IpoptLib">
+      <Value>$(IpoptLib)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CoinDebugEnvironment">
+      <Value>$(CoinDebugEnvironment)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
